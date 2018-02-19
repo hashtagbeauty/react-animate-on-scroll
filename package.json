@@ -26,10 +26,6 @@
     "url": "https://github.com/dbramwell/react-animate-on-scroll/issues"
   },
   "homepage": "http://dbramwell.github.io/react-animate-on-scroll",
-  "peerDependencies": {
-    "classnames": "^2.2.5",
-    "react": "^15.4.1"
-  },
   "devDependencies": {
     "animate.css": "^3.5.2",
     "babel-core": "^6.24.1",
@@ -54,10 +50,5 @@
     "react-dom": "^15.5.4",
     "style-loader": "^0.17.0",
     "webpack": "^2.5.1"
-  },
-  "dependencies": {
-    "karma-ie-launcher": "^1.0.0",
-    "lodash.throttle": "^4.1.1",
-    "prop-types": "^15.5.9"
   }
 }
