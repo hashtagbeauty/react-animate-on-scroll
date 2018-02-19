@@ -18,7 +18,8 @@ export default class ScrollAnimation extends Component {
       style: {
         animationDuration: `${this.props.duration}s`,
         opacity: this.props.initiallyVisible ? 1 : 0
-      }
+      },
+      animated: false
     };
 
     if(!this.serverSide){
@@ -122,7 +123,8 @@ export default class ScrollAnimation extends Component {
         style: {
           animationDuration: `${this.props.duration}s`,
           opacity: 1
-        }
+        },
+        animated: true
       });
       const vis = this.getVisibility();
       this.animating = false;
@@ -168,7 +170,9 @@ export default class ScrollAnimation extends Component {
             }
           });
         } else if (currentVis.inViewport && this.props.animateIn) {
-          this.animateIn(this.props.afterAnimatedIn);
+          if (!this.props.animateOnce || !this.state.animated) {
+            this.animateIn(this.props.afterAnimatedIn);
+          }
         } else if (currentVis.onScreen && this.visibility.inViewport && this.props.animateOut && this.state.style.opacity === 1) {
           this.animateOut(this.props.afterAnimatedOut);
         }
